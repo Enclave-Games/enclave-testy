@@ -42,8 +42,32 @@ namespace enclave_testy
 		system(color_txt);
 	}
 
-	void assert_fail(std::string message)
-	{	
+	template <typename TestFunction>
+	void isolate_function_for_test(const TestFunction& _function)
+	{
+		try
+		{
+			_function();
+			std::cout << "Test success!" << std::endl;
+		}
+		catch (std::runtime_error& error)
+		{
+			std:cout << "Fail: " << error.what() << std::endl;
+		}
+	}
+	
+	template <typename TestFunction>
+	void isolate_function_for_test(const TestFunction& _function, const std::string& test_name)
+	{
+		try
+		{
+			_function();
+			std::cout << "Test " << test_name << " success!" << std::endl;
+		}
+		catch (std::runtime_error& error)
+		{
+			std:cout << test_name << " fail: " << error.what() << std::endl;
+		}
 	}
 
 	template <typename FirstType, typename SecondType>
