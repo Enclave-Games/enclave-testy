@@ -3,7 +3,7 @@
 namespace enclave_testy
 {
 	template <typename FirstType, typename SecondType>
-	void assert_equals(const FirstType& first, const SecondType& second)
+	void TestWrapper::assert_equals(const FirstType& first, const SecondType& second)
 	{
 		std::ostringstream string_stream;
 		const char* color_txt;
@@ -23,7 +23,7 @@ namespace enclave_testy
 	}
 
 	template <typename FirstType, typename SecondType>
-	void assert_equals(const std::string message, const FirstType& first, const SecondType& second)
+	void TestWrapper::assert_equals(const std::string message, const FirstType& first, const SecondType& second)
 	{
 		std::ostringstream string_stream;
 		const char* color_txt;
@@ -43,7 +43,7 @@ namespace enclave_testy
 	}
 
 	template <typename TestFunction>
-	void isolate_function_for_test(const TestFunction& _function)
+	void TestWrapper::isolate_function_for_test(const TestFunction& _function)
 	{
 		try
 		{
@@ -57,7 +57,7 @@ namespace enclave_testy
 	}
 	
 	template <typename TestFunction>
-	void isolate_function_for_test(const TestFunction& _function, const std::string& test_name)
+	void TestWrapper::isolate_function_for_test(const TestFunction& _function, const std::string& test_name)
 	{
 		try
 		{
@@ -67,11 +67,12 @@ namespace enclave_testy
 		catch (std::runtime_error& error)
 		{
 			std::cout << test_name << " fail: " << error.what() << std::endl;
+			++fail_count;
 		}
 	}
 
 	template <typename FirstType, typename SecondType>
-	void assert_true(const FirstType& first, const SecondType& second)
+	void TestWrapper::assert_true(const FirstType& first, const SecondType& second)
 	{
 		std::ostringstream string_stream;
 		const char* color;
@@ -84,9 +85,19 @@ namespace enclave_testy
 		{
 			string_stream << __FILE__ << std::endl;
 			string_stream << "Assertion failed: " << first << " != " << second << " " << "Line: " << __LINE__ << second;
+			++fail_count;
 			color = "color 4";
 		}
 		std::cerr << string_stream.str() << std::endl;
 		system(color);
+	}
+
+	TestWrapper::~TestWrapper()
+	{
+		if (fail_count > 0)
+		{
+			std::cerr << fail_count << "test failed!" << std::endl;
+			exit(1);
+		}
 	}
 }
