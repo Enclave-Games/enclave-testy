@@ -52,7 +52,7 @@ namespace enclave_testy
 		}
 		catch (std::runtime_error& error)
 		{
-			std:cout << "Fail: " << error.what() << std::endl;
+			std::cout << "Fail: " << error.what() << std::endl;
 		}
 	}
 	
@@ -66,7 +66,7 @@ namespace enclave_testy
 		}
 		catch (std::runtime_error& error)
 		{
-			std:cout << test_name << " fail: " << error.what() << std::endl;
+			std::cout << test_name << " fail: " << error.what() << std::endl;
 		}
 	}
 
