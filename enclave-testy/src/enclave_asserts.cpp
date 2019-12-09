@@ -42,18 +42,27 @@ namespace enclave_testy
 		system(color_txt);
 	}
 
-
-	//TODO
-	/*template <typename FirstType, typename SecondType>
-	bool assert_false(const FirstType& first, const SecondType& second)
-	{
-		return false;
+	void assert_fail(std::string message)
+	{	
 	}
 
-
 	template <typename FirstType, typename SecondType>
-	bool assert_true(const FirstType& first, const SecondType& second)
+	void assert_true(const FirstType& first, const SecondType& second)
 	{
-		return true;
-	}*/
+		std::ostringstream string_stream;
+		const char* color_txt;
+		if (first == second)
+		{
+			string_stream << "AssertTrue - OK";
+			color_txt = "color 2";
+		}
+		else
+		{
+			string_stream << __FILE__ << " " << " " << "Line: " << __LINE__ << std::endl;
+			string_stream << "Assertion failed: " << first << " != " << second;
+			color_txt = "color 4";
+		}
+		std::cout << string_stream.str() << std::endl;
+		system(color_txt);
+	}
 }

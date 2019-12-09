@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iostream>
 #include <Windows.h>
+#include <cmath>
 
 namespace enclave_testy
 {
