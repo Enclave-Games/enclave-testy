@@ -5,43 +5,39 @@ namespace enclave_testy
 	template <typename FirstType, typename SecondType>
 	void TestWrapper::assert_equals(const FirstType& first, const SecondType& second)
 	{
-		std::ostringstream string_stream;
-		const char* color_txt;
 		if (first != second)
 		{
 			string_stream << __FILE__ << " " << " " << "Line: " << __LINE__ << std::endl;
 			string_stream << "Assertion failed: " << first << " != " << second;
-			color_txt = "color 4";
+			color = "color 4";
 			++fail_count;
 		}
 		else
 		{
 			string_stream << "AssertEqual - OK";
-			color_txt = "color 2";
+			color = "color 2";
 		}
 		std::cout << string_stream.str() << std::endl;
-		system(color_txt);
+		system(color);
 	}
 
 	template <typename FirstType, typename SecondType>
 	void TestWrapper::assert_equals(const std::string message, const FirstType& first, const SecondType& second)
 	{
-		std::ostringstream string_stream;
-		const char* color_txt;
 		if (first != second)
 		{
 			string_stream << __FILE__ << " " << " " << "Line: " << __LINE__ << std::endl;
 			string_stream << message << first << " != " << second;
-			color_txt = "color 4";
+			color = "color 4";
 			++fail_count;
 		}
 		else
 		{
 			string_stream << "AssertEqual - OK";
-			color_txt = "color 2";
+			color = "color 2";
 		}
 		std::cout << string_stream.str() << std::endl;
-		system(color_txt);
+		system(color);
 	}
 
 	template <typename TestFunction>
@@ -77,8 +73,6 @@ namespace enclave_testy
 	template <typename FirstType, typename SecondType>
 	void TestWrapper::assert_true(const FirstType& first, const SecondType& second)
 	{
-		std::ostringstream string_stream;
-		const char* color;
 		if (first == second)
 		{
 			string_stream << "AssertTrue - OK";
@@ -86,8 +80,8 @@ namespace enclave_testy
 		}
 		else
 		{
-			string_stream << __FILE__ << std::endl;
-			string_stream << "Assertion failed: " << first << " != " << second << " " << "Line: " << __LINE__ << second;
+			string_stream << "Source: " << __FILE__ << " " << "Line: " << __LINE__ << std::endl;
+			string_stream << "Assertion failed: " << first << " != " << second;
 			++fail_count;
 			color = "color 4";
 		}

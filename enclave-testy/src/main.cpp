@@ -3,6 +3,6 @@
 int main()
 {
 	enclave_testy::TestWrapper test;
-	test.assert_true(5, 1);
+	test.assert_true(5, 6);
 	return 0;
 }

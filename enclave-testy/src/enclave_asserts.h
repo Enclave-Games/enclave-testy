@@ -37,6 +37,8 @@ namespace enclave_testy
 		}
 	private:
 		int fail_count = 0;
+		std::ostringstream string_stream;
+		const char* color;
 	};
 	
 }
