@@ -12,6 +12,7 @@ namespace enclave_testy
 			string_stream << __FILE__ << " " << " " << "Line: " << __LINE__ << std::endl;
 			string_stream << "Assertion failed: " << first << " != " << second;
 			color_txt = "color 4";
+			++fail_count;
 		}
 		else
 		{
@@ -32,6 +33,7 @@ namespace enclave_testy
 			string_stream << __FILE__ << " " << " " << "Line: " << __LINE__ << std::endl;
 			string_stream << message << first << " != " << second;
 			color_txt = "color 4";
+			++fail_count;
 		}
 		else
 		{
@@ -53,6 +55,7 @@ namespace enclave_testy
 		catch (std::runtime_error& error)
 		{
 			std::cout << "Fail: " << error.what() << std::endl;
+			++fail_count;
 		}
 	}
 	
@@ -90,14 +93,5 @@ namespace enclave_testy
 		}
 		std::cerr << string_stream.str() << std::endl;
 		system(color);
-	}
-
-	TestWrapper::~TestWrapper()
-	{
-		if (fail_count > 0)
-		{
-			std::cerr << fail_count << "test failed!" << std::endl;
-			exit(1);
-		}
 	}
 }

@@ -27,7 +27,14 @@ namespace enclave_testy
 		template <typename FirstType, typename SecondType>
 		void assert_true(const FirstType& first, const SecondType& second);
 
-		virtual ~TestWrapper();
+		~TestWrapper()
+		{
+			if (fail_count > 0)
+			{
+				std::cerr << fail_count << " test failed!" << std::endl;
+				exit(1);
+			}
+		}
 	private:
 		int fail_count = 0;
 	};
