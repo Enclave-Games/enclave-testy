@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\enclave_asserts.cpp" />
+    <ClCompile Include="src\asserts\enclave_asserts.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\trace\enclave_trace.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\enclave_asserts.h" />
+    <ClInclude Include="src\asserts\enclave_asserts.h" />
+    <ClInclude Include="src\trace\enclave_trace.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

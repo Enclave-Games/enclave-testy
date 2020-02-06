@@ -18,12 +18,18 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\enclave_asserts.cpp">
+    <ClCompile Include="src\asserts\enclave_asserts.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\trace\enclave_trace.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\enclave_asserts.h">
+    <ClInclude Include="src\asserts\enclave_asserts.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\trace\enclave_trace.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
