@@ -1,4 +1,4 @@
-#include "enclave_asserts.cpp"
+#include "asserts/enclave_asserts.cpp"
 
 int main()
 {
