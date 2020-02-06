@@ -2,6 +2,7 @@
 #define ENCLAVE_TESTY_TRACE
 
 #include <string>
+#include <Windows.h>
 
 namespace enclave_testy
 {
@@ -12,12 +13,18 @@ namespace enclave_testy
 		maybe
 	};
 
+	enum colors
+	{
+		YELLOW = 6,
+		RED = FOREGROUND_RED
+	};
+
 	class enclave_trace
 	{
 	public:
-		void trace_warning(std::string& message);
+		void trace_warning(const char* message);
 		void trace_warning(answer& message);
-		void trace_error(std::string& message);
+		void trace_error(const char* message);
 		void trace_error(answer& message);
 	private:
 	};
