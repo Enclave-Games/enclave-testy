@@ -20,6 +20,11 @@ namespace testy
 		class profiller
 		{
 		public:
+			struct profilling_info
+			{
+				
+			};
+
 			profiller() = default;
 			explicit profiller(const char* name);
 			void stop();
