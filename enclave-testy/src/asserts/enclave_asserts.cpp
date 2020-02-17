@@ -1,6 +1,6 @@
 #include "enclave_asserts.h"
 
-namespace enclave_testy
+namespace testy
 {
 	template <typename FirstType, typename SecondType>
 	void TestWrapper::assert_equals(const FirstType& first, const SecondType& second)

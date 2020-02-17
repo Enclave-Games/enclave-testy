@@ -7,7 +7,7 @@
 #include <Windows.h>
 #include <cmath>
 
-namespace enclave_testy
+namespace testy
 {
 	class TestWrapper
 	{
