@@ -12,7 +12,7 @@ namespace testy
 
 		void profiller::create_and_write_data_to(const std::string filepath = "perfomance.json")
 		{
-			_output_stream.open(filepath);
+			_output_stream.open(filepath, std::ios::in | std::ios::app);
 		}
 
 		uint64_t profiller::calculate_session_id()
