@@ -29,20 +29,15 @@ namespace testy
 
 		void profiller::begin_session(const std::string message, bool is_console_out)
 		{
-
 			if (is_console_out)
 			{
-				_session_id = calculate_session_id();
-				_message = message;
-				std::cout << "Session Id - " << _session_id << "\n"
+				std::cout << "Session Id - " << calculate_session_id() << "\n"
 					<< "Session Name - " << _session_name << "\n"
 					<< '\n';
 			}
 			else
 			{
-				_session_id = calculate_session_id();
-				_message = message;
-				_output_stream << "Session Id - " << _session_id << "\n"
+				_output_stream << "Session Id - " << calculate_session_id() << "\n"
 					<< "Session Name - " << _session_name << "\n"
 					<< '\n';
 			}
@@ -60,7 +55,7 @@ namespace testy
 			long long end = std::chrono::time_point_cast<std::chrono::microseconds>(endTime).time_since_epoch().count();
 
 			auto duration = end - start;
-			std::cout << "Operation: " << _message << " - " << duration << " ms" << '\n';
+			std::cout << "Operation: " << this->_session_name << " - " << duration << " ms" << '\n';
 			//_output_stream.flush();
 			_stopped = true;
 		}
