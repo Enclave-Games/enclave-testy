@@ -1,8 +1,8 @@
 #include "enclave_trace.h"
 
-namespace enclave_testy
+namespace testy
 {
-	void enclave_trace::trace_warning(const char* message)
+	void trace::trace_warning(const char* message)
 	{
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
 			FOREGROUND_INTENSITY | 
@@ -11,7 +11,7 @@ namespace enclave_testy
 		puts(message);
 	}
 
-	void enclave_trace::trace_error(const char* message)
+	void trace::trace_error(const char* message)
 	{
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
 			FOREGROUND_INTENSITY |

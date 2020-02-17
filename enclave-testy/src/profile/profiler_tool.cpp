@@ -32,6 +32,8 @@ namespace testy
 
 			if (is_console_out)
 			{
+				_session_id = calculate_session_id();
+				_message = message;
 				std::cout << "Session Id - " << _session_id << "\n"
 					<< "Session Name - " << _session_name << "\n"
 					<< '\n';
@@ -59,7 +61,7 @@ namespace testy
 
 			auto duration = end - start;
 			std::cout << "Operation: " << _message << " - " << duration << " ms" << '\n';
-			_output_stream.flush();
+			//_output_stream.flush();
 			_stopped = true;
 		}
 

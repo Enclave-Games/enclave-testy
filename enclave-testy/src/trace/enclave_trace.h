@@ -4,7 +4,7 @@
 #include <string>
 #include <Windows.h>
 
-namespace enclave_testy
+namespace testy
 {
 	enum answer
 	{
@@ -19,7 +19,7 @@ namespace enclave_testy
 		RED = FOREGROUND_RED
 	};
 
-	class enclave_trace
+	class trace
 	{
 	public:
 		void trace_warning(const char* message);
