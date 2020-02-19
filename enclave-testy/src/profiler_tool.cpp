@@ -10,13 +10,26 @@ namespace testy
 			_start_timepoint = std::chrono::high_resolution_clock::now();
 		}
 
-		void profiller::create_and_write_data_to(const std::string filepath = "perfomance.json")
+		void profiller::create_and_write_data_to(const std::string filepath, extencion_file& file_ext)
 		{
+			std::string extencion;
 			_output_stream.open(filepath, std::ios::in | std::ios::app);
 
-			// TODO: json format
- 			// ...
-			//
+			// TODO!!
+
+			switch (file_ext)
+			{
+			case JSON:
+				extencion = ".json";
+				break;
+
+			case TXT:
+				extencion = ".txt";
+				break;
+
+			default:
+				break;
+			}
 
 			_output_stream.close();
 		}

@@ -20,17 +20,24 @@ namespace testy
 		class profiller
 		{
 		public:
+			typedef enum extencion_file
+			{
+				JSON,
+				TXT
+			};
+
 			struct profilling_info
 			{
 				
 			};
+
 
 			profiller() = default;
 			explicit profiller(const char* name);
 			void stop();
 			void begin_session(const std::string _message);
 			void begin_session(const std::string message, bool is_console_out);
-			void create_and_write_data_to(const std::string filepath);
+			void create_and_write_data_to(const std::string filepath, extencion_file& extenction);
 			void write_data(const std::string filepath);
 			inline uint32_t calculate_session_id();
 			void end_session();
