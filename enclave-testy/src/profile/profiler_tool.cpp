@@ -13,16 +13,22 @@ namespace testy
 		void profiller::create_and_write_data_to(const std::string filepath = "perfomance.json")
 		{
 			_output_stream.open(filepath, std::ios::in | std::ios::app);
+
+			// TODO: json format
+ 			// ...
+			//
+
+			_output_stream.close();
 		}
 
-		uint64_t profiller::calculate_session_id()
+		uint32_t profiller::calculate_session_id()
 		{
 			std::random_device rd;
 			std::mt19937_64 eng(rd());
 
-			std::uniform_int_distribution<uint64_t> distr;
+			std::uniform_int_distribution<uint32_t> distr;
 
-			uint64_t id = distr(eng);
+			uint32_t id = distr(eng);
 			return id;
 		}
 
