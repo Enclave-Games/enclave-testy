@@ -32,7 +32,7 @@ namespace testy
 			void begin_session(const std::string message, bool is_console_out);
 			void create_and_write_data_to(const std::string filepath);
 			void write_data(const std::string filepath);
-			inline uint64_t calculate_session_id();
+			inline uint32_t calculate_session_id();
 			void end_session();
 			~profiller();
 		private:
