@@ -18,24 +18,24 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\asserts\enclave_asserts.cpp">
+    <ClCompile Include="src\enclave_asserts.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\trace\enclave_trace.cpp">
+    <ClCompile Include="src\profiler_tool.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\profile\profiler_tool.cpp">
+    <ClCompile Include="src\enclave_trace.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\asserts\enclave_asserts.h">
+    <ClInclude Include="include\enclave_asserts.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\trace\enclave_trace.h">
+    <ClInclude Include="include\profiler_tool.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\profile\profiler_tool.h">
+    <ClInclude Include="include\enclave_trace.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

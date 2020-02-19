@@ -87,6 +87,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Enclave\enclave-testy\enclave-testy\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +116,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Enclave\enclave-testy\enclave-testy\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,15 +125,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\asserts\enclave_asserts.cpp" />
+    <ClCompile Include="src\enclave_asserts.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\profile\profiler_tool.cpp" />
-    <ClCompile Include="src\trace\enclave_trace.cpp" />
+    <ClCompile Include="src\profiler_tool.cpp" />
+    <ClCompile Include="src\enclave_trace.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\asserts\enclave_asserts.h" />
-    <ClInclude Include="src\profile\profiler_tool.h" />
-    <ClInclude Include="src\trace\enclave_trace.h" />
+    <ClInclude Include="include\enclave_asserts.h" />
+    <ClInclude Include="include\profiler_tool.h" />
+    <ClInclude Include="include\enclave_trace.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
