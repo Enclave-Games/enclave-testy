@@ -125,10 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\enclave_asserts.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\profiler_tool.cpp" />
-    <ClCompile Include="src\enclave_trace.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\enclave_asserts.h" />
