@@ -19,15 +19,33 @@ namespace testy
 		RED = FOREGROUND_RED
 	};
 
-	class trace
+	void trace_warning(const char* message)
 	{
-	public:
-		void trace_warning(const char* message);
-		void trace_warning(answer& message);
-		void trace_error(const char* message);
-		void trace_error(answer& message);
-	private:
-	};
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+			FOREGROUND_INTENSITY |
+			colors::YELLOW);
+
+		puts(message);
+	}
+
+	void trace_error(const char* message)
+	{
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),
+			FOREGROUND_INTENSITY |
+			colors::RED);
+
+		puts(message);
+	}
+
+	void trace_warning(answer& message)
+	{
+
+	}
+
+	void trace_error(answer& message)
+	{
+
+	}
 }
 
 #endif
